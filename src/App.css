@@ -1,38 +1,346 @@
-.App {
+/* ============================================= */
+/* == 1. GLOBAL STYLES & VARIABLES           == */
+/* ============================================= */
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;700&display=swap');
+
+:root {
+  --font-primary: 'Jost', sans-serif;
+  --color-text: #2c2c2c;
+  --color-background-light: #fdfaf6;
+  --color-background-dark: #f0e9e1;
+  --color-promo-background: #f7eef6;
+  --color-border: #e0e0e0;
+  --color-button-text: #ffffff;
+  --color-button-background: #252525;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-primary);
+  background-color: var(--color-background-light);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3 {
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ============================================= */
+/* == 2. HEADER (.header)                      == */
+/* ============================================= */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: var(--color-background-dark);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.navLinks a {
+  margin: 0 1.2rem;
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.navLinks a:hover {
+  color: #000;
+}
+
+.userActions span {
+  margin-left: 1.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* ============================================= */
+/* == 3. HERO (.hero)                          == */
+/* ============================================= */
+.hero {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-background-dark);
+  min-height: 80vh;
+  padding: 0 5%;
+}
+
+.hero .content {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 450px;
+  margin-bottom: 2rem;
+}
+
+.ctaButton {
+  padding: 12px 30px;
+  background-color: var(--color-button-background);
+  color: var(--color-button-text);
+  border: none;
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ctaButton:hover {
+  background-color: #000;
+}
+
+.sizes {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.sizes span {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+}
+
+.sizes .activeSize {
+  background-color: var(--color-button-background);
+  color: var(--color-button-text);
+  border-color: var(--color-button-background);
+}
+
+.hero .imageContainer {
+  flex: 1;
+  /* background-image: url('/images/hero-model.png'); IMPORTANT: Create/find this image */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  min-height: 70vh;
+}
+
+/* ============================================= */
+/* == 4. FEATURED PRODUCTS (.featuredSection)  == */
+/* ============================================= */
+.featuredSection {
+  padding: 80px 0;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.featuredSection h2 {
+  font-size: 2rem;
+  letter-spacing: 3px;
+  margin-bottom: 40px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* ============================================= */
+/* == 5. PRODUCT CARD (.card)                  == */
+/* ============================================= */
+.card {
+  text-align: center;
+  background: #fff;
+  border: 1px solid var(--color-border);
+}
+
+.imageWrapper {
+  background-color: var(--color-background-dark);
+  padding: 20px;
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .imageWrapper img {
+  transform: scale(1.05);
+}
+
+.cardInfo {
+  padding: 20px;
+}
+
+.cardInfo h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.cardInfo p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-text);
+  margin: 0 0 20px 0;
+}
+
+.buyButton {
+  padding: 10px 20px;
+  border: 1px solid var(--color-button-background);
+  background-color: transparent;
+  color: var(--color-button-background);
+  font-family: var(--font-primary);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.buyButton:hover {
+  background-color: var(--color-button-background);
+  color: var(--color-button-text);
+}
+
+/* ============================================= */
+/* == 6. PROMO BANNER (.promoBanner)           == */
+/* ============================================= */
+.promoBanner {
+  background-color: var(--color-promo-background);
+  padding: 60px 20px;
+  text-align: center;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  margin: 60px 0;
+}
+
+.promoContent {
+  position: relative;
+  max-width: 600px;
+  /* Add hexagon effect later with clip-path if desired */
+}
+
+.promoContent h2 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+.promoContent p {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.promoContent button {
+  padding: 12px 30px;
+  background-color: var(--color-button-background);
+  color: var(--color-button-text);
+  border: none;
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.discountBadge {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-text);
   color: white;
+  padding: 8px 15px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 700;
 }
 
-.App-link {
-  color: #61dafb;
+
+/* ============================================= */
+/* == 7. FOOTER (.footer)                      == */
+/* ============================================= */
+.footer {
+  padding: 40px;
+  background-color: var(--color-background-dark);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.footerContent span, .footerContent a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 20px;
+  font-size: 1.3rem; /* Adjust for icon library */
+}
+
+/* ============================================= */
+/* == 8. RESPONSIVENESS (Mobile)               == */
+/* ============================================= */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 15px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .hero .content {
+    padding-right: 0;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero .imageContainer {
+    display: none; /* Hide complex image on mobile or simplify */
+  }
+
+  .productGrid {
+    grid-template-columns: 1fr; /* Stack products on top of each other */
   }
 }
