@@ -1,27 +1,30 @@
-// frontend/src/components/Header.js
-
 import React from 'react';
-// REMOVE THIS LINE: import styles from './Header.module.css'; 
+import './Header.css';
+import { FaSearch, FaShoppingCart, FaUser } from 'react-icons/fa';
 
 const Header = () => {
     return (
-        // CHANGE classNames from {styles.x} to "x"
-        <header className="header">
-            <div className="logo">
-                <img src="/logo.png" alt="CHEXSHIRT Logo" className="logo-img" />
+        <>
+            <div className="announcement">
+                Prepaid Order 25% Discount
             </div>
-            <nav className="navLinks">
-                <a href="#">SHIRTS</a>
-                <a href="#">SHOP</a>
-                <a href="#">OUR STORY</a>
-                <a href="#">FAVORITES</a>
-            </nav>
-            <div className="userActions">
-                <span>🔍</span>
-                <span>🛒</span>
-                <span>👤</span>
-            </div>
-        </header>
+            <header className="header">
+                <div className="logo">
+                    <img src="/logo.png" alt="ZayraApparel Logo" className="logo-img" />
+                </div>
+                <nav className="navLinks">
+                    <a href="/collections/new-arrival">New Arrival</a>
+                    <a href="/collections/men-shirt">Men Shirt</a>
+                    <a href="/collections/best-selling">Best Selling</a>
+                    <a href="/contact">Contact Us</a>
+                </nav>
+                <div className="userActions">
+                    <span><FaSearch /></span>
+                    <span><FaShoppingCart /></span>
+                    <span><FaUser /></span>
+                </div>
+            </header>
+        </>
     );
 };
 

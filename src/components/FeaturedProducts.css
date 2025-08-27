@@ -1,0 +1,66 @@
+.featuredSection {
+    padding: 4rem 2rem;
+    background-color: #f8f8f8;
+}
+
+.sectionTitle {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.sectionTitle h2 {
+    font-size: 2rem;
+    color: #333;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.sectionTitle p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.featuredGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.viewCollection {
+    display: block;
+    width: fit-content;
+    margin: 3rem auto 0;
+    padding: 1rem 3rem;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.viewCollection:hover {
+    background-color: #333;
+}
+
+@media (max-width: 768px) {
+    .featuredSection {
+        padding: 3rem 1rem;
+    }
+
+    .featuredGrid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 1rem;
+    }
+
+    .sectionTitle h2 {
+        font-size: 1.5rem;
+    }
+
+    .sectionTitle p {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,100 @@
+.card {
+    background: #ffffff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.imageWrapper {
+    position: relative;
+    padding-top: 133.33%;
+    /* 3:4 aspect ratio */
+    overflow: hidden;
+}
+
+.imageWrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .imageWrapper img {
+    transform: scale(1.05);
+}
+
+.cardInfo {
+    padding: 1rem;
+    text-align: center;
+}
+
+.productName {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+    display: block;
+}
+
+.productName:hover {
+    color: #666;
+}
+
+.priceContainer {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    align-items: baseline;
+}
+
+.salePrice {
+    color: #ff4444;
+    font-weight: 600;
+}
+
+.regularPrice {
+    color: #999;
+    text-decoration: line-through;
+    font-size: 0.9rem;
+}
+
+.selectOptions {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.selectOptions:hover {
+    background-color: #333;
+}
+
+.saleTag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff4444;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 1;
+}

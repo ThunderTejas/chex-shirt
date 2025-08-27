@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import FeaturedProducts from './components/FeaturedProducts';
 import PromoBanner from './components/PromoBanner';
+import ProductGrid from './components/ProductGrid';
 import Footer from './components/Footer';
 
 
@@ -16,6 +17,7 @@ function App() {
         <Hero />
         <FeaturedProducts />
         <PromoBanner />
+        <ProductGrid />
         {/* You can add more sections here */}
       </main>
       <Footer />
